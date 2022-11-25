@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.6">
+  <style type="text/css">
+    li.li1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #fb0007; -webkit-text-stroke: #000000}
+    li.li2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000}
+    span.s1 {color: #000000; -webkit-text-stroke: 0px #000000}
+    span.s2 {font-kerning: none}
+    span.s3 {-webkit-text-stroke: 0px #000000}
+    span.s4 {font-kerning: none; color: #fb0007}
+    ul.ul1 {list-style-type: disc}
+    ul.ul2 {list-style-type: circle}
+    ul.ul3 {list-style-type: square}
+  </style>
+</head>
+<body>
+<ul class="ul1">
+  <li class="li1"><span class="s1"><b></b></span><span class="s2"><b>Draw initial UI idea</b></span></li>
+  <li class="li2"><span class="s3"></span><span class="s2">Set up basic HTML elements using React</span></li>
+  <ul class="ul2">
+    <li class="li2"><span class="s3"></span><span class="s2">Current Regular GPA:</span></li>
+    <ul class="ul3">
+      <li class="li1"><span class="s1"></span><span class="s2"><b>textbox<span class="Apple-converted-space"> </span></b></span></li>
+      <li class="li1"><span class="s3"></span><span class="s2"><b>no? submit</b></span></li>
+      <li class="li2"><span class="s3"></span><span class="s4"><b>numbers only</b></span><span class="s2">, 0-4 if possible</span></li>
+      <li class="li1"><span class="s1"></span><span class="s2"><b>default 0.00</b></span></li>
+    </ul>
+    <li class="li2"><span class="s3"></span><span class="s2">Current HOPE GPA:<span class="Apple-converted-space"> </span></span></li>
+    <ul class="ul3">
+      <li class="li1"><span class="s1"></span><span class="s2"><b>textbox</b></span></li>
+      <li class="li1"><span class="s1"></span><span class="s2"><b>no? submit</b></span></li>
+      <li class="li2"><span class="s3"></span><span class="s4"><b>numbers only</b></span><span class="s2">, 0-4 if possible</span></li>
+      <li class="li1"><span class="s1"></span><span class="s2"><b>default 0.00</b></span></li>
+    </ul>
+    <li class="li2"><span class="s3"></span><span class="s2">Current Total Credit Hours:</span></li>
+    <ul class="ul3">
+      <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>textbox</b></span></li>
+      <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>no? submit</b></span></li>
+      <li class="li2"><span class="s3"></span><span class="s4"><b>numbers only</b></span><span class="s2">, &gt;0 if possible</span></li>
+      <li class="li1"><span class="s1"></span><span class="s2"><b>default 0</b></span></li>
+    </ul>
+    <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Hypothetical Regular/HOPE GPA:</b></span></li>
+    <ul class="ul3">
+      <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>View-only text</b></span></li>
+      <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Default is current GPA until classes are added</b></span></li>
+    </ul>
+    <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Add class form</b></span></li>
+    <ul class="ul3">
+      <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Textbox for class name</b></span></li>
+      <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Submit button</b></span></li>
+    </ul>
+    <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Class list</b></span></li>
+    <ul class="ul3">
+      <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Uses names from add class form</b></span></li>
+      <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Credit hour field</b></span></li>
+      <ul class="ul3">
+        <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Numbers only, &gt;0</b></span></li>
+      </ul>
+      <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Grade field</b></span></li>
+      <ul class="ul3">
+        <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Dropdown {A B C D F}</b></span></li>
+      </ul>
+      <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Stem?</b></span></li>
+      <ul class="ul3">
+        <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Checkbox</b></span></li>
+      </ul>
+    </ul>
+  </ul>
+  <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Write Current GPA handling</b></span></li>
+  <ul class="ul2">
+    <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Event: when textbox changes</b></span></li>
+    <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Outcome: store in state variable</b></span></li>
+    <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Outcome: change bigger bold text showing hypothetical GPA</b></span></li>
+    <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Do this for both regular and HOPE</b></span></li>
+  </ul>
+  <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Write credit hours handling</b></span></li>
+  <ul class="ul2">
+    <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Event: when textbox changes? or maybe want submit button instead</b></span></li>
+    <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Outcome: store in state variable</b></span></li>
+  </ul>
+  <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Write class form handling</b></span></li>
+  <ul class="ul2">
+    <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Event: when submit is clicked with a class name or default provided</b></span></li>
+    <li class="li1"><span class="s3"><b></b></span><span class="s2"><b>Outcome: takes class name and creates a new list element with that class name</b></span></li>
+  </ul>
+  <li class="li2"><span class="s3"></span><span class="s2">Write class list handling</span></li>
+  <ul class="ul2">
+    <li class="li2"><span class="s3"></span><span class="s2">Use class object? with properties credit hours, grade, stem?</span></li>
+    <li class="li2"><span class="s3"></span><span class="s2">Credit hour field:</span></li>
+    <ul class="ul3">
+      <li class="li2"><span class="s3"></span><span class="s2">Event: when textbox is changed</span></li>
+      <li class="li2"><span class="s3"></span><span class="s2">Outcome: store as property for the class</span></li>
+    </ul>
+    <li class="li2"><span class="s3"></span><span class="s2">Grade field</span></li>
+    <ul class="ul3">
+      <li class="li2"><span class="s3"></span><span class="s2">Event: when item selected</span></li>
+      <li class="li2"><span class="s3"></span><span class="s2">Outcome: store as property for the class</span></li>
+    </ul>
+    <li class="li2"><span class="s3"></span><span class="s2">Stem?</span></li>
+    <ul class="ul3">
+      <li class="li2"><span class="s3"></span><span class="s2">Event: when box is checked</span></li>
+      <li class="li2"><span class="s3"></span><span class="s2">Outcome: stored as a state variable default false, updated via reduce when checked</span></li>
+    </ul>
+    <li class="li3">Ability to remove a class</li>
+  </ul>
+  <li class="li2"><span class="s3"></span><span class="s2">Write hypothetical GPA calculation function</span></li>
+  <ul class="ul2">
+    <li class="li2"><span class="s3"></span><span class="s2">Takes in current GPA and credit hours</span></li>
+    <li class="li2"><span class="s3"></span><span class="s2">Takes in each class object</span></li>
+    <li class="li2"><span class="s3"></span><span class="s2">{[(current GPA) * (current credit hours)] + [forEach += (class grade) * (class credit hours)]} / [(current credit hours) + (forEach += class credit hours)]</span></li>
+    <li class="li2"><span class="s3"></span><span class="s2">When forEach for grade adding keep track of total class credit hours so don’t have to reiterate</span></li>
+  </ul>
+  <li class="li2"><span class="s3"></span><span class="s2">Lots of testing</span></li>
+  <li class="li2"><span class="s3"></span><span class="s2">Make pretty?</span></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">11/20 - 11/21</p>
+<p class="p1">Initially had gpa variables as state variables</p>
+<p class="p1">Decided to make components separately in different files</p>
+<p class="p1">This caused the issue of how to share the current GPA data to the hypothetical GPA component</p>
+<p class="p1">After some research decided to use create context method</p>
+<p class="p1">Also running into formatting problems but those are not major</p>
+<p class="p2"><br></p>
+<p class="p1">Looking into how to handle classes</p>
+<p class="p1">Decided to use array and push() every new class</p>
+<p class="p2"><br></p>
+<p class="p1">Thinking that for displaying the class list and logic, I will loop through the class array</p>
+<p class="p1">Class object will contain properties name, hours, grade, stem</p>
+<p class="p1">Need to make defaults for those when only name is initially added</p>
+<p class="p1"><span class="Apple-tab-span">	</span>-&gt; No, just make user put values for those also when adding, now only need regular defaults</p>
+<p class="p2"><br></p>
+<p class="p1">Just occurred to me I need to make a remove class option</p>
+<p class="p1">Also changing “class” to “course” from here on to reduce confusion</p>
+<p class="p2"><br></p>
+<p class="p1">Encountered some issues with the course list</p>
+<p class="p1">first had to make id a state variable for the key in the li because otherwise it didnt work idk why</p>
+<p class="p1">had some issues with the checkbox for stem but worked around it by making a tempStem state variable</p>
+<p class="p1">For some reason when I try to add .5 if its stem the code multiplies by 10 then adds .5</p>
+<p class="p1"><span class="Apple-tab-span">	</span>-&gt; it was viewing it as a string and concatenating</p>
+<p class="p1"><span class="Apple-tab-span">	</span>-&gt; so I wrapped the value in parseFloat() in the submit handler</p>
+<p class="p2"><br></p>
+<p class="p1">Now my big issue is how to send the data from the class list to the gpa calculation</p>
+<p class="p1">Apparently state updates are asynch so it always seems one behind, and also its just not working in general</p>
+<p class="p2"><br></p>
+<p class="p1">IDEA FOR TOMORROW: have total as a const not a function, and either make it state or try something like that</p>
+<p class="p2"><br></p>
+<p class="p1">11/22</p>
+<p class="p1">Watched more React tutorial</p>
+<p class="p1">Rethinking how to handle the data,</p>
+<p class="p1">Old method with array and just checking if empty with some rendering variables could work well</p>
+<p class="p1">Just tough to get all of that to be shared across components</p>
+<p class="p2"><br></p>
+<p class="p1">11/23</p>
+<p class="p1">Set up a shared test array, now the mapping seems to work?</p>
+<p class="p1">Not sure why it wasn’t working before, but ideally I would have this array being shared so that the calculations are done in the gpa component not the course component</p>
+<p class="p1">Okay yeah seems to be working when I access the array in a different component, gonna try to make the switch now</p>
+<p class="p1">it’s working…</p>
+<p class="p1">Side note-&gt; going to need to rename some stuff soon</p>
+<p class="p1">Okay now the currentGPA is getting divided by 10 for some reason (but for real this time, not a string)</p>
+<p class="p1">Was a string issue! When adding current hours + new hours it got string concatenated</p>
+<p class="p1">Added parseInt in the function but would like to fix it at the source (I really wish javascript had types)</p>
+<p class="p2"><br></p>
+<p class="p1">Working now for both unweighted and HOPE hypothetical GPA</p>
+<p class="p2"><br></p>
+<p class="p1">For remove: since each list item is added straight from course array, could pass the id through the remove button to make finding the array element to remove much easier</p>
+<p class="p1">Essentially creating a separate remove button each time, which is what I want, but have one function to handle it being passed the element/id to remove</p>
+<p class="p1">I’ve passed the ID to remove to the event handler, now I need to set the array to a new array containing only the other objects</p>
+<p class="p2"><br></p>
+<p class="p1">11/24</p>
+<p class="p1">Working on remove button</p>
+<p class="p1">Doing some weird behavior, seems like a step behind again and so the remove button sometimes won’t work, sometimes will remove two at a time</p>
+<p class="p1">By creating a temp array I get the removing in the &lt;li&gt; loop to work</p>
+<p class="p1">Now need to merge the two arrays I have so that changing the courseList also affects the GPA calculation</p>
+<p class="p1">DevBackupA Created</p>
+<p class="p1">Remove functionality now also updates GPA, the contexts have been merged</p>
+<p class="p1">Now I’m going to rename the AppContext to more descriptive names</p>
+<p class="p2"><br></p>
+<p class="p1">Functionality seems to be working now, just need to make it look nicer</p>
+<p class="p1">Fixed small bug where if totalHours is 0, the calculate function returns 0, not NaN</p>
+<p class="p1">Quality of life improvement would be allowing the class to be changed once it is added, however this may force me to remake all of the properties as states?</p>
+<p class="p2"><br></p>
+<p class="p1">Using CSS grid to align elements</p>
+<p class="p1">Rounded hypothetical GPA to 2 decimal places</p>
+<p class="p2"><br></p>
+<p class="p1">Now I want to work on the default text inside the fields, and resetting them once a class is added</p>
+<p class="p1">Going to try using the useRef hook to do this</p>
+<p class="p1">Got a lotttt of errors when I tried this</p>
+<p class="p1">Just gonna set the values to nothing until I figure out state more</p>
+<p class="p1">Changed tempStem to state variable, now box is auto unchecked after every submit</p>
+<p class="p2"><br></p>
+<p class="p1">Going to change other variables to state to see if it still works</p>
+<p class="p1">Didn’t changed back to regular</p>
+<p class="p2"><br></p>
+<p class="p1">I think this is a good place to make a beta build, going to try by building and uploading to Netlify</p>
+<p class="p1">Beta Version 1.0:</p>
+<p class="p1">https://neon-ganache-fbf5ae.netlify.app/</p>
+<p class="p2"><br></p>
+</body>
+</html>
