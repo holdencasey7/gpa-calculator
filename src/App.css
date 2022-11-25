@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2fr 3fr;
+}
+
+#hyUnGPA {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#hyHoGPA {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+#currGPAandCredits {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#courses {
+  margin-top: 25px;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row: 2;
+}
+
+#course-list {
+  margin-top: 15px;
+}
+
+.BigGPA {
+  font-size: 50px;
+}
+
+.course-table {
+  width: 100%;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.header {
+  text-align: center;
+  font-size: 75px;
+  font-family: 'Lucida Grande', monospace;
+}
